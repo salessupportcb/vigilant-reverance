@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<script>
+fetch("/api/me",{credentials:"include"}).then(function(r){if(!r.ok)window.location.replace("/signin");}).catch(function(){window.location.replace("/signin");});
+</script>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: rgba(198,166,58,0.22); }
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-thumb { background: rgba(30,28,24,0.14); border-radius: 9px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  a { color: #7a6a3a; text-decoration: none; }
+  a:hover { color: #9a854a; }
+  @keyframes shimmer { 0% { background-position: -420px 0; } 100% { background-position: 420px 0; } }
+  @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .prow:hover { background: rgba(248,250,252,0.7) !important; }
+  .clrow:hover { background: #faf8f2; }
+  .vaultbtn:hover { background: #ffe23d; }
+  .vaultbtn2:hover { background: #F4D000; }
+  .acard { transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+  .acard:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(28,27,25,0.1); border-color: rgba(203,213,225,0.8) !important; }
+  .signout { transition: color 0.2s; }
+  .signout:hover, .signout:hover svg { color: #c9c6bf !important; }
+  .finput { width: 100%; border: 1px solid #e2e8f0; border-radius: 9px; padding: 9px 12px; font-family: inherit; font-size: 13.5px; color: #26241f; background: #fff; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  .finput:focus { border-color: #211f1b; box-shadow: 0 0 0 3px rgba(33,31,27,0.08); }
+  .finput::placeholder { color: #b7b3aa; }
+  textarea.finput { resize: vertical; min-height: 76px; line-height: 1.5; }
+  select.finput { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%239a978f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; cursor: pointer; }
+  .obtn:hover { background: #f3f1ea; }
+  .fcard:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(28,27,25,0.1); border-color: rgba(203,213,225,0.8) !important; }
+  .fcard { transition: transform 0.28s ease-in-out, box-shadow 0.28s ease-in-out, border-color 0.28s ease-in-out; }
+  .drow:hover { background: rgba(39,39,42,0.35); }
+</style>
+</helmet>
+<div style="display:flex;min-height:100vh;background:#f6f4ef;color:#26241f;font-family:'Inter',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;">
